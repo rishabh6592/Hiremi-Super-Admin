@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verified Users — Hiremi Super Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/table.css" />
+</head>
+<body>
+  <div class="app-shell" data-active="verified-users">
+    <main class="app-content">
+      <div class="page-head">
+        <h1>Verified Users <span class="count" id="pageCount">(0)</span></h1>
+        <p>Total representation of accounts that have passed verification.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <input type="text" id="search" placeholder="Search by name, email, UID…" />
+          <button id="searchBtn">Search</button>
+        </div>
+        <div class="filter-group">
+          <button class="filter-btn active" data-sort="default"><i class="ri-arrow-up-down-line"></i> Default</button>
+          <button class="filter-btn" data-sort="date"><i class="ri-arrow-up-down-line"></i> Filter by Date</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>UID No.</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone No.</th>
+              <th>WhatsApp No.</th>
+              <th>Gender</th>
+              <th>Degree</th>
+              <th>Birthplace State</th>
+              <th>College Name</th>
+              <th>College State</th>
+              <th class="th-dropdown">
+                Passing Year <i class="ri-arrow-down-s-line" id="passingYearIcon"></i>
+                <div id="passingYearDropdown" class="dropdown-content">
+                  <a href="#">2020</a><a href="#">2021</a><a href="#">2022</a>
+                  <a href="#">2023</a><a href="#">2024</a>
+                </div>
+              </th>
+              <th>Account Created</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="dataTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button class="page-btn" id="prev">&lt;</button>
+        <span id="pageNumbers"></span>
+        <button class="page-btn" id="next">&gt;</button>
+        <input type="number" id="page-input" min="1" placeholder="Page No." />
+        <button class="go-btn">Go</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+  <script>HiremiAuth.requireAuth();</script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/stats.js"></script>
+  <script>
+    const rows = HiremiData.buildUserRows(HiremiStats.computeStat("verified-users") || 2840, "verified");
+    window.TABLE_CONFIG = {
+      rows,
+      actionLabel: "View",
+      columns: [
+        { key: "uid", label: "UID No." }, { key: "name", label: "Name" },
+        { key: "email", label: "Email" }, { key: "phone", label: "Phone No." },
+        { key: "whatsapp", label: "WhatsApp No." }, { key: "gender", label: "Gender" },
+        { key: "degree", label: "Degree" }, { key: "birthplace", label: "Birthplace State" },
+        { key: "college", label: "College Name" }, { key: "collegeState", label: "College State" },
+        { key: "passingYear", label: "Passing Year" }, { key: "createdAt", label: "Account Created" },
+      ],
+    };
+    document.getElementById("pageCount").textContent = `(${rows.length})`;
+  </script>
+  <script src="assets/js/table.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiremi — Super Admin Login</title>
+  <meta name="description" content="Sign in to the Hiremi Super Admin dashboard." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/login.css" />
+</head>
+<body class="login-body">
+  <div class="login-shell">
+    <section class="login-hero">
+      <div class="login-hero__inner">
+        <h1 class="login-hero__brand">Hiremi</h1>
+        <h2 class="login-hero__title">Super Admin Login</h2>
+        <p class="login-hero__text">
+          By logging in, you gain access to the entire Hiremi application —
+          view and manage every part of the platform from one place.
+        </p>
+        <a href="#" class="login-hero__link">Learn more <i class="ri-arrow-right-line"></i></a>
+        <div class="login-hero__dots" aria-hidden="true">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-form-panel">
+      <div class="login-form-card">
+        <div class="login-form-card__head">
+          <h1>Hiremi</h1>
+          <p>Super Admin Login</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="johndoe@email.com" autocomplete="username" required />
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••••••" autocomplete="current-password" required />
+          </div>
+
+          <div class="field-row">
+            <small id="formMessage" class="error-text" role="alert" hidden></small>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary login-submit">Sign in</button>
+
+          <p class="demo-hint">
+            Demo credentials — <strong>admin@hiremi.com</strong> / <strong>Hiremi@123</strong>
+          </p>
+        </form>
+      </div>
+      <img src="assets/images/icon.png" class="login-form-panel__icon" alt="" aria-hidden="true" />
+    </section>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/login.js"></script>
+</body>
+</html>

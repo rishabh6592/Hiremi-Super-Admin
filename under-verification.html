@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Under Verification — Hiremi Super Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/table.css" />
+</head>
+<body>
+  <div class="app-shell" data-active="under-verification">
+    <main class="app-content">
+      <div class="page-head">
+        <h1>Under Verification <span class="count" id="pageCount">(0)</span></h1>
+        <p>Accounts currently in the verification queue, with waiting and remaining time.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <input type="text" id="search" placeholder="Search by name or email…" />
+          <button id="searchBtn">Search</button>
+        </div>
+        <div class="filter-group">
+          <button class="filter-btn active" data-sort="default"><i class="ri-arrow-up-down-line"></i> Default</button>
+          <button class="filter-btn" data-sort="date"><i class="ri-arrow-up-down-line"></i> Filter by Date</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Payment</th>
+              <th>Date &amp; Time</th>
+              <th>Waiting</th>
+              <th>Remaining</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="dataTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button class="page-btn" id="prev">&lt;</button>
+        <span id="pageNumbers"></span>
+        <button class="page-btn" id="next">&gt;</button>
+        <input type="number" id="page-input" min="1" placeholder="Page No." />
+        <button class="go-btn">Go</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+  <script>HiremiAuth.requireAuth();</script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/stats.js"></script>
+  <script>
+    const count = HiremiStats.computeStat("under-verification") || 860;
+    const rows = Array.from({ length: count }, (_, i) => ({
+      name: `Applicant ${i + 1}`,
+      email: `applicant${i + 1}@mail.com`,
+      payment: "₹45,000",
+      dateTime: "12/03/2025 · 03:46",
+      waiting: "36:00 hr",
+      remaining: "24:54:03",
+    }));
+    window.TABLE_CONFIG = {
+      rows,
+      actionLabel: "Edit",
+      columns: [
+        { key: "name", label: "Name" }, { key: "email", label: "Email" },
+        { key: "payment", label: "Payment" }, { key: "dateTime", label: "Date & Time" },
+        { key: "waiting", label: "Waiting" }, { key: "remaining", label: "Remaining" },
+      ],
+    };
+    document.getElementById("pageCount").textContent = `(${rows.length})`;
+  </script>
+  <script src="assets/js/table.js"></script>
+</body>
+</html>

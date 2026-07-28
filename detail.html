@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Details — Hiremi Super Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/table.css" />
+</head>
+<body>
+  <div class="app-shell" data-active="">
+    <main class="app-content">
+      <div class="page-head">
+        <h1 id="pageTitle">Details <span class="count" id="pageCount">(0)</span></h1>
+        <p id="pageSubtitle">Loading…</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <input type="text" id="search" placeholder="Search…" />
+          <button id="searchBtn">Search</button>
+        </div>
+        <div class="filter-group">
+          <button class="filter-btn active" data-sort="default"><i class="ri-arrow-up-down-line"></i> Default</button>
+          <button class="filter-btn" data-sort="date"><i class="ri-arrow-up-down-line"></i> Filter by Date</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead id="dataTableHead"></thead>
+          <tbody id="dataTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button class="page-btn" id="prev">&lt;</button>
+        <span id="pageNumbers"></span>
+        <button class="page-btn" id="next">&gt;</button>
+        <input type="number" id="page-input" min="1" placeholder="Page No." />
+        <button class="go-btn">Go</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+  <script>HiremiAuth.requireAuth();</script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/stats.js"></script>
+  <script src="assets/js/detail.js"></script>
+  <script src="assets/js/table.js"></script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.dash-col-main,
+.dash-col-side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.dash-panel {
+  padding: 18px;
+}
+
+.dash-panel__title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin-bottom: 14px;
+}
+
+.dash-panel__title--underline {
+  text-decoration: underline;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.dash-panel--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.resolved-number-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.resolved-number {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.resolved-number span {
+  color: rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+}
+
+/* Stat row (accounts / verification) */
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.stat-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.stat-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 16px 14px;
+  height: 100%;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.stat-card img {
+  height: 34px;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+.stat-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.stat-card-link:hover .stat-card {
+  background: var(--color-primary-light);
+  transform: translateY(-2px);
+}
+
+/* Mini card grid (Hiremi 360 / HR dashboard) */
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.mini-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.mini-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.mini-card img {
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.mini-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.mini-card h6 {
+  font-size: 12.5px;
+  color: rgba(0, 0, 0, 0.55);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.mini-card:hover {
+  background: rgba(106, 106, 228, 0.85);
+  color: #fff;
+}
+
+.mini-card:hover h6 {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.mini-card--soon {
+  justify-content: center;
+  text-align: center;
+  border: 1px dashed var(--color-border);
+  background: transparent;
+}
+
+.mini-grid--hr {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.mini-card--hr {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.mini-card--hr .mini-card__total {
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+}
+
+.mini-card--hr h3 {
+  font-size: 20px;
+  margin-top: 4px;
+}
+
+.mini-card--hr i {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.mini-card--hr.hr-verified:hover { background: #a0d157; color: #fff; }
+.mini-card--hr.hr-not-verified:hover { background: var(--color-danger); color: #fff; }
+.mini-card--hr.hr-registered:hover,
+.mini-card--hr.hr-approval:hover { background: #231eb0ab; color: #fff; }
+.mini-card--hr.hr-demo:hover { background: #a0d157; color: #fff; }
+
+/* Gender cards */
+
+.gender-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.gender-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.gender-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.gender-card p {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+
+.gender-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.gender-pill--verified {
+  background: var(--color-warning-bg);
+  border: 1px solid var(--color-warning-border);
+  color: #3a7565;
+}
+
+.gender-pill--not-verified {
+  background: var(--color-pink-bg);
+  border: 1px solid var(--color-pink-border);
+  color: #8a4054;
+}
+
+.bottom-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.bottom-card {
+  background: var(--color-bg);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.bottom-card:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Right column: opportunities */
+
+.opp-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.opp-card-link:last-child {
+  margin-bottom: 0;
+}
+
+.opp-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.opp-card img {
+  height: 26px;
+}
+
+.opp-card span {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.opp-card strong {
+  font-size: 17px;
+}
+
+.opp-card--purple { background: var(--color-info-bg); }
+.opp-card--purple:hover { background: #9690ff; color: #fff; }
+.opp-card--green { background: var(--color-success-bg); }
+.opp-card--green:hover { background: #88ff8c; color: #fff; }
+.opp-card--red { background: var(--color-danger-bg); }
+.opp-card--red:hover { background: #ff8987; color: #fff; }
+
+/* ---------------------------------------------------------------------- */
+/* Larger screens: two-column dashboard layout                            */
+/* ---------------------------------------------------------------------- */
+
+@media (min-width: 1180px) {
+  .dash-grid {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: start;
+  }
+
+  .dash-col-side {
+    position: sticky;
+    top: calc(var(--topbar-h) + 20px);
+  }
+
+  .stat-row {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .stat-card--divider {
+    border-right: 1px solid var(--color-border);
+  }
+
+  .mini-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mini-grid--hr {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bottom-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1179px) {
+  .stat-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .stat-row,
+  .mini-grid,
+  .mini-grid--hr,
+  .gender-grid,
+  .bottom-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

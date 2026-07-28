@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiremi — OTP Verification</title>
+  <meta name="description" content="Verify your identity with a one-time password." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/login.css" />
+  <link rel="stylesheet" href="assets/css/otp.css" />
+</head>
+<body class="login-body">
+  <div class="login-shell">
+    <section class="login-hero">
+      <div class="login-hero__inner">
+        <h1 class="login-hero__brand">Hiremi</h1>
+        <h2 class="login-hero__title">Super Admin Login</h2>
+        <p class="login-hero__text">
+          By logging in, you gain access to the entire Hiremi application —
+          view and manage every part of the platform from one place.
+        </p>
+        <a href="#" class="login-hero__link">Learn more <i class="ri-arrow-right-line"></i></a>
+        <div class="login-hero__dots" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-form-panel">
+      <div class="login-form-card otp-card">
+        <div class="login-form-card__head">
+          <h1>OTP sent!</h1>
+          <p id="otpTarget">An OTP was sent to your registered email address.</p>
+        </div>
+
+        <form id="otpForm" novalidate>
+          <label class="otp-label" for="otp0">Enter OTP</label>
+          <div class="otp-input" role="group" aria-label="One-time password">
+            <input type="text" inputmode="numeric" maxlength="1" class="otp-box" id="otp0" />
+            <input type="text" inputmode="numeric" maxlength="1" class="otp-box" id="otp1" />
+            <input type="text" inputmode="numeric" maxlength="1" class="otp-box" id="otp2" />
+            <input type="text" inputmode="numeric" maxlength="1" class="otp-box" id="otp3" />
+            <input type="text" inputmode="numeric" maxlength="1" class="otp-box" id="otp4" />
+            <input type="text" inputmode="numeric" maxlength="1" class="otp-box" id="otp5" />
+          </div>
+
+          <small id="otpMessage" class="error-text" role="alert" hidden></small>
+
+          <p class="resend-line">
+            Didn't receive the OTP? <a href="#" id="resendOtp">Resend OTP</a>
+            <span id="resendTimer"></span>
+          </p>
+
+          <button type="submit" class="btn btn-primary login-submit">Verify now</button>
+
+          <p class="demo-hint">Demo OTP — <strong>123456</strong></p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/otp.js"></script>
+</body>
+</html>

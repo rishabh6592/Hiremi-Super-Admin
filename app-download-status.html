@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Download Status — Hiremi Super Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/table.css" />
+  <link rel="stylesheet" href="assets/css/app-download.css" />
+</head>
+<body>
+  <div class="app-shell" data-active="app-download">
+    <main class="app-content">
+      <div class="page-head">
+        <h1>State Rankings</h1>
+        <p>User downloads and verification status, broken down by state.</p>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="college">College State</button>
+        <button class="tab-btn" data-tab="birthplace">Birthplace State</button>
+        <button class="tab-btn" data-tab="all">All States</button>
+        <button class="btn btn-primary download-btn"><i class="ri-download-line"></i> Download App</button>
+      </div>
+
+      <div class="toolbar" style="margin-top:16px;">
+        <div class="filter-group">
+          <button class="filter-btn active" data-sort="default"><i class="ri-arrow-up-down-line"></i> Default</button>
+          <button class="filter-btn" data-metric="verified"><i class="ri-arrow-up-down-line"></i> Verified Users</button>
+          <button class="filter-btn" data-metric="notVerified"><i class="ri-arrow-up-down-line"></i> Not Verified Users</button>
+          <button class="filter-btn" data-metric="downloads"><i class="ri-arrow-up-down-line"></i> App Downloads</button>
+        </div>
+      </div>
+
+      <section class="surface-card progress-panel">
+        <div class="progress-row">
+          <span>Account Creates</span>
+          <div class="progress-track"><div class="progress-fill progress-fill--blue" style="width:90%">90%</div></div>
+        </div>
+        <div class="progress-row">
+          <span>Verified Accounts</span>
+          <div class="progress-track"><div class="progress-fill progress-fill--green" style="width:70%">70%</div></div>
+        </div>
+        <div class="progress-row">
+          <span>Unverified Accounts</span>
+          <div class="progress-track"><div class="progress-fill progress-fill--red" style="width:50%">50%</div></div>
+        </div>
+      </section>
+
+      <h2 class="table-title">All States</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>State Name</th>
+              <th>Verified Users</th>
+              <th>Non-Verified Users</th>
+              <th>App Downloads</th>
+              <th>View</th>
+            </tr>
+          </thead>
+          <tbody id="stateTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+  <script>HiremiAuth.requireAuth();</script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/table.js"></script>
+  <script src="assets/js/app-download.js"></script>
+</body>
+</html>

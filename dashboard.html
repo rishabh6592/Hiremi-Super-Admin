@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Hiremi Super Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body>
+  <div class="app-shell" data-active="dashboard">
+    <main class="app-content">
+      <div class="page-head">
+        <h1>Application Dashboard</h1>
+        <p>Overview of accounts, programs and opportunities across Hiremi.</p>
+      </div>
+
+      <div class="dash-grid">
+        <!-- Primary column -->
+        <div class="dash-col-main">
+
+          <section class="surface-card dash-panel">
+            <h2 class="dash-panel__title">Account verification</h2>
+            <div class="stat-row">
+              <a class="stat-card-link" href="detail.html?type=total-accounts">
+                <div class="stat-card stat-card--divider">
+                  <img src="assets/images/total-account.png" alt="" />
+                  <p>Total Accounts Created</p>
+                  <h3 data-stat="total-accounts">4,336</h3>
+                </div>
+              </a>
+              <a class="stat-card-link" href="verified-users.html">
+                <div class="stat-card stat-card--divider">
+                  <img src="assets/images/verificatio-user.png" alt="" />
+                  <p>Verified Users</p>
+                  <h3 data-stat="verified-users">2,840</h3>
+                </div>
+              </a>
+              <a class="stat-card-link" href="under-verification.html">
+                <div class="stat-card stat-card--divider">
+                  <img src="assets/images/under-verification.png" alt="" />
+                  <p>Under Verification</p>
+                  <h3 data-stat="under-verification">860</h3>
+                </div>
+              </a>
+              <a class="stat-card-link" href="not-verified-users.html">
+                <div class="stat-card stat-card--divider">
+                  <img src="assets/images/not-verify.png" alt="" />
+                  <p>Not Verified Users</p>
+                  <h3 data-stat="not-verified-users">540</h3>
+                </div>
+              </a>
+              <a class="stat-card-link" href="rejected-users.html">
+                <div class="stat-card">
+                  <img src="assets/images/rejected.png" alt="" />
+                  <p>Rejected In Verification</p>
+                  <h3 data-stat="rejected-users">96</h3>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <section class="surface-card dash-panel">
+            <h2 class="dash-panel__title">Hiremi 360 Program</h2>
+            <div class="mini-grid">
+              <a class="mini-card-link" href="detail.html?type=hiremi360-unimentor-internship"><div class="mini-card"><img src="assets/images/total-employees-in-hiremi-360-section.png" alt="" /><div><h3 data-stat="hiremi360-unimentor-internship">5,420</h3><h6>Unimentor + Internship</h6></div></div></a>
+              <a class="mini-card-link" href="detail.html?type=hiremi360-unimentor"><div class="mini-card"><img src="assets/images/total-employees-in-hiremi-360-section.png" alt="" /><div><h3 data-stat="hiremi360-unimentor">4,890</h3><h6>Unimentor Program</h6></div></div></a>
+              <a class="mini-card-link" href="detail.html?type=hiremi360-corporate"><div class="mini-card"><img src="assets/images/total-employees-in-hiremi-360-section.png" alt="" /><div><h3 data-stat="hiremi360-corporate">4,160</h3><h6>Corporate Launchpad</h6></div></div></a>
+              <a class="mini-card-link" href="detail.html?type=hiremi360-mocktests"><div class="mini-card"><img src="assets/images/total-employees-in-hiremi-360-section.png" alt="" /><div><h3 data-stat="hiremi360-mocktests">5,980</h3><h6>Mock Tests</h6></div></div></a>
+              <a class="mini-card-link" href="detail.html?type=hiremi360-projecthub"><div class="mini-card"><img src="assets/images/total-employees-in-hiremi-360-section.png" alt="" /><div><h3 data-stat="hiremi360-projecthub">3,540</h3><h6>Live Project Hub</h6></div></div></a>
+              <div class="mini-card mini-card--soon"><div><h3>Coming</h3><h6>Launching Soon</h6></div></div>
+            </div>
+          </section>
+
+          <section class="surface-card dash-panel">
+            <h2 class="dash-panel__title">HR's Dashboard</h2>
+            <div class="mini-grid mini-grid--hr">
+              <a class="mini-card-link" href="detail.html?type=hr-verified"><div class="mini-card mini-card--hr hr-verified"><h6>Verified</h6><span class="mini-card__total">Total</span><h3 data-stat="hr-verified">8,420</h3><i class="ri-arrow-right-line"></i></div></a>
+              <a class="mini-card-link" href="detail.html?type=hr-not-verified"><div class="mini-card mini-card--hr hr-not-verified"><h6>Not Verified</h6><span class="mini-card__total">Total</span><h3 data-stat="hr-not-verified">2,860</h3><i class="ri-arrow-right-line"></i></div></a>
+              <a class="mini-card-link" href="detail.html?type=hr-registered"><div class="mini-card mini-card--hr hr-registered"><h6>Registered</h6><span class="mini-card__total">Total</span><h3 data-stat="hr-registered">11,280</h3><i class="ri-arrow-right-line"></i></div></a>
+              <a class="mini-card-link" href="detail.html?type=hr-approval"><div class="mini-card mini-card--hr hr-approval"><h6>Post Approval</h6><span class="mini-card__total">Total</span><h3 data-stat="hr-approval">6,740</h3><i class="ri-arrow-right-line"></i></div></a>
+              <a class="mini-card-link" href="detail.html?type=hr-demo-1"><div class="mini-card mini-card--hr hr-demo"><h6>Demo Section</h6><span class="mini-card__total">Total</span><h3 data-stat="hr-demo-1">4,120</h3><i class="ri-arrow-right-line"></i></div></a>
+              <a class="mini-card-link" href="detail.html?type=hr-demo-2"><div class="mini-card mini-card--hr hr-demo"><h6>Demo Section</h6><span class="mini-card__total">Total</span><h3 data-stat="hr-demo-2">3,960</h3><i class="ri-arrow-right-line"></i></div></a>
+            </div>
+          </section>
+
+          <section class="surface-card dash-panel">
+            <h2 class="dash-panel__title">User's Dashboard</h2>
+            <div class="gender-grid">
+              <div class="gender-card gender-card--female">
+                <h3 data-stat="female-total">1,840</h3>
+                <p>Female Users</p>
+                <a class="gender-pill gender-pill--verified" href="detail.html?type=female-verified"><span data-stat="female-verified">1,240</span> Verified <i class="ri-arrow-right-line"></i></a>
+                <a class="gender-pill gender-pill--not-verified" href="detail.html?type=female-not-verified"><span data-stat="female-not-verified">480</span> Not Verified <i class="ri-arrow-right-line"></i></a>
+              </div>
+              <div class="gender-card gender-card--male">
+                <h3 data-stat="male-total">2,496</h3>
+                <p>Male Users</p>
+                <a class="gender-pill gender-pill--verified" href="detail.html?type=male-verified"><span data-stat="male-verified">1,690</span> Verified <i class="ri-arrow-right-line"></i></a>
+                <a class="gender-pill gender-pill--not-verified" href="detail.html?type=male-not-verified"><span data-stat="male-not-verified">640</span> Not Verified <i class="ri-arrow-right-line"></i></a>
+              </div>
+            </div>
+            <div class="bottom-card-grid">
+              <a class="bottom-card" href="detail.html?type=domain">Interested Domain <i class="ri-arrow-right-line"></i></a>
+              <a class="bottom-card" href="detail.html?type=degree">Degree <i class="ri-arrow-right-line"></i></a>
+              <a class="bottom-card" href="detail.html?type=college-state">College State <i class="ri-arrow-right-line"></i></a>
+              <a class="bottom-card" href="detail.html?type=branch">Branch <i class="ri-arrow-right-line"></i></a>
+              <a class="bottom-card" href="detail.html?type=passing-year">Passing Year <i class="ri-arrow-right-line"></i></a>
+              <a class="bottom-card" href="detail.html?type=birth-place">Birth Place <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </section>
+        </div>
+
+        <!-- Secondary column -->
+        <div class="dash-col-side">
+          <section class="surface-card dash-panel">
+            <h2 class="dash-panel__title">Current Opportunities</h2>
+            <a class="opp-card-link" href="detail.html?type=opp-internships">
+              <div class="opp-card opp-card--purple">
+                <img src="assets/images/internships.png" alt="" />
+                <span>Internships</span>
+                <strong data-stat="opp-internships">2,450</strong>
+              </div>
+            </a>
+            <a class="opp-card-link" href="detail.html?type=opp-freshers">
+              <div class="opp-card opp-card--green">
+                <img src="assets/images/job.png" alt="" />
+                <span>Freshers Job</span>
+                <strong data-stat="opp-freshers">4,180</strong>
+              </div>
+            </a>
+            <a class="opp-card-link" href="detail.html?type=opp-experienced">
+              <div class="opp-card opp-card--red">
+                <img src="assets/images/experience.png" alt="" />
+                <span>Experienced Job</span>
+                <strong data-stat="opp-experienced">1,920</strong>
+              </div>
+            </a>
+          </section>
+
+          <section class="surface-card dash-panel">
+            <h2 class="dash-panel__title">Current Seekers</h2>
+            <a class="opp-card-link" href="detail.html?type=seek-internships">
+              <div class="opp-card opp-card--purple">
+                <img src="assets/images/internships.png" alt="" />
+                <span>Internships</span>
+                <strong data-stat="seek-internships">2,260</strong>
+              </div>
+            </a>
+            <a class="opp-card-link" href="detail.html?type=seek-freshers">
+              <div class="opp-card opp-card--green">
+                <img src="assets/images/job.png" alt="" />
+                <span>Freshers Job</span>
+                <strong data-stat="seek-freshers">3,870</strong>
+              </div>
+            </a>
+            <a class="opp-card-link" href="detail.html?type=seek-experienced">
+              <div class="opp-card opp-card--red">
+                <img src="assets/images/experience.png" alt="" />
+                <span>Experienced Job</span>
+                <strong data-stat="seek-experienced">1,780</strong>
+              </div>
+            </a>
+          </section>
+
+          <section class="surface-card dash-panel dash-panel--center">
+            <h2 class="dash-panel__title dash-panel__title--underline">Resolved Queries</h2>
+            <a class="resolved-number-link" href="detail.html?type=resolved-queries">
+              <p class="resolved-number"><span style="color: #000;" data-stat="resolved-queries">612</span><span>/<span data-stat="total-queries">860</span></span></p>
+            </a>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+  <script>HiremiAuth.requireAuth();</script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/stats.js"></script>
+  <script>HiremiStats.bindLiveStats();</script>
+</body>
+</html>
